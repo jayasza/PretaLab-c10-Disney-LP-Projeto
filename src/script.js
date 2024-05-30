@@ -1,4 +1,4 @@
-let numeroAleatorio = 0;
+let numeroAleatorio = 50;
 let tentativas = 0;
 
 function jogoDeAdivinhacao() {
@@ -6,7 +6,17 @@ function jogoDeAdivinhacao() {
     
     if(!palpiteDigitado) {
         alert("Digite um valor válido!")
+        return;
     }
+
+    if(palpiteDigitado === numeroAleatorio) {
+        alert("Parabéns, você adivinhou!")
+    } else if (palpiteDigitado > numeroAleatorio) {
+        atualizarFeedback("Esse número é muito alto. Tente novamente.")
+    } else {
+        atualizarFeedback("O número é muito baixo. Tente novamente.")
+    }
+
     /*
     Guiado
     ---
