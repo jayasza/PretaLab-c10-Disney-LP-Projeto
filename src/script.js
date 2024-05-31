@@ -25,16 +25,26 @@ function jogoDeAdivinhacao() {
     const palpitesFalhos = pegarPalpitesFalhos();
     const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
     atualizarPalpitesFalhos(novosPalpitesFalhos);
+
+    const pontuacaoAtual = pegarPontuacao();
+    if(pontuacaoAtual === "Você tem 0 pontos") {
+     alert("Perdeu! você chegou no limbo, acabo para você!");
+    reiniciarJogo();
+    }
+
 }
+
     
 function reiniciarJogo() {
     const vaiReiniciar = confirm("Deseja jogar novamente?");
     
-    if(vaiReiniciar === true) {
+    //if(vaiReiniciar === true) {
+        if(vaiReiniciar) {
         atualizarPalpitesFalhos("");
         atualizarPontuacao(100)
         atualizarFeedback("")
         limparPalpiteDigitado();
+         
     }
 }
 
