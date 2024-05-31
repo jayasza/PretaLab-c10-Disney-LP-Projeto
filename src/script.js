@@ -1,4 +1,4 @@
-let numeroAleatorio = 50;
+let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
 
 function jogoDeAdivinhacao() {
@@ -25,26 +25,16 @@ function jogoDeAdivinhacao() {
     const palpitesFalhos = pegarPalpitesFalhos();
     const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
     atualizarPalpitesFalhos(novosPalpitesFalhos);
-    /*
-    Guiado
-    ---
-    1. Não aceita palpite vazio
-    2. Dar dicas a cada palpite (maior ou menor)
-    3. Atualizar a pontuação a cada palpite errado
-    4. Mostrar todos os palpites errados
-    5. Deve-se poder reiniciar o jogo a qualquer momento
-    6. Se a pontuação chegar a zero, deve ser exibido um alerta e reiniciado o jogo
+}
     
-    Individual
-    ---
-    7. Só deve aceitar numeros entre 1 e 100
-    8. Não deve aceitar palpite repetido
-    */
-
-
-    // to-do
-}
-
 function reiniciarJogo() {
-    // to-do
+    const vaiReiniciar = confirm("Deseja jogar novamente?");
+    
+    if(vaiReiniciar === true) {
+        atualizarPalpitesFalhos("");
+        atualizarPontuacao(100)
+        atualizarFeedback("")
+        limparPalpiteDigitado();
+    }
 }
+
