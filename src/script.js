@@ -1,5 +1,6 @@
 let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
+let palpitesAnteriores = [];
 
 function jogoDeAdivinhacao() {
     const palpiteDigitado = pegarPalpiteDigitado();
@@ -13,6 +14,13 @@ function jogoDeAdivinhacao() {
         alert("Digite um número entre 1 e 100!");
         return;
     }
+
+    if (palpitesAnteriores.includes(palpiteDigitado)) {
+        alert("Você já tentou este palpite antes!");
+        return;
+    }
+
+     palpitesAnteriores = palpitesAnteriores.concat(palpiteDigitado);
 
     if(palpiteDigitado === numeroAleatorio) {
         alert("Parabéns, você adivinhou!")
