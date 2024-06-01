@@ -7,6 +7,11 @@ function jogoDeAdivinhacao() {
     if(!palpiteDigitado) {
         alert("Digite um valor válido!")
         return;
+    } 
+
+    if (palpiteDigitado < 1 || palpiteDigitado > 100) {
+        alert("Digite um número entre 1 e 100!");
+        return;
     }
 
     if(palpiteDigitado === numeroAleatorio) {
@@ -30,11 +35,9 @@ function jogoDeAdivinhacao() {
     if(pontuacaoAtual === "Você tem 0 pontos") {
      alert("Perdeu! você chegou no limbo, acabo para você!");
     reiniciarJogo();
-    }
-
 }
 
-    
+
 function reiniciarJogo() {
     const vaiReiniciar = confirm("Deseja jogar novamente?");
     
@@ -47,4 +50,4 @@ function reiniciarJogo() {
          
     }
 }
-
+}
