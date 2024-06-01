@@ -23,7 +23,8 @@ function jogoDeAdivinhacao() {
      palpitesAnteriores = palpitesAnteriores.concat(palpiteDigitado);
 
     if(palpiteDigitado === numeroAleatorio) {
-        alert("Parabéns, você adivinhou!")
+        alert("Parabéns, você adivinhou!");
+        reiniciarJogo();
     } else if (palpiteDigitado > numeroAleatorio) {
         tentativas++;
         atualizarFeedback("Esse número é muito alto. Tente novamente.")
