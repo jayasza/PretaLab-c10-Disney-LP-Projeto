@@ -56,7 +56,8 @@ function reiniciarJogo() {
         atualizarPalpitesFalhos("");
         atualizarPontuacao(100)
         atualizarFeedback("")
-        limparPalpitesDigitados("");
+        limparPalpiteDigitado("");
+        limparPalpitesDigitados("");        
          
     }
 }
