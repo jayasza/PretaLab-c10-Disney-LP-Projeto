@@ -52,12 +52,12 @@ function reiniciarJogo() {
     
     if(vaiReiniciar){
         palpitesAnteriores = [];
-        tentativas = 0; //reiniciando o número de tentativas
+        tentativas = 0;
         atualizarPalpitesFalhos("");
         atualizarPontuacao(100);
         atualizarFeedback("");
         limparPalpiteDigitado();
     
-        numeroAleatorio = Math.floor(Math.random() * 100) + 1; //Gerando um novo número aleatório
+        numeroAleatorio = Math.floor(Math.random() * 100) + 1; 
     }
 }
