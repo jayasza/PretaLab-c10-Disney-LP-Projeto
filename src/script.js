@@ -20,7 +20,7 @@ function jogoDeAdivinhacao() {
         return;
     }
 
-     palpitesAnteriores = palpitesAnteriores.concat(palpiteDigitado);
+    palpitesAnteriores = palpitesAnteriores.concat(palpiteDigitado);
 
     if(palpiteDigitado === numeroAleatorio) {
         alert("Parabéns, você adivinhou!");
@@ -40,25 +40,24 @@ function jogoDeAdivinhacao() {
     const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
     atualizarPalpitesFalhos(novosPalpitesFalhos);
 
-
     const pontuacaoAtual = pegarPontuacao();
     if(pontuacaoAtual === "Você tem 0 pontos") {
-     alert("Perdeu! você chegou no limbo, acabo para você!");
-    reiniciarJogo();
+        alert("Perdeu! você chegou no limbo, acabou para você!");
+        reiniciarJogo();
+    }
 }
-
 
 function reiniciarJogo() {
     const vaiReiniciar = confirm("Deseja jogar novamente?");
     
-    //if(vaiReiniciar === true) {
-        if(vaiReiniciar) {
+    if(vaiReiniciar){
+        palpitesAnteriores = [];
+        tentativas = 0; //reiniciando o número de tentativas
         atualizarPalpitesFalhos("");
-        atualizarPontuacao(100)
-        atualizarFeedback("")
-        limparPalpiteDigitado("");
-        limparPalpitesDigitados("");        
-         
+        atualizarPontuacao(100);
+        atualizarFeedback("");
+        limparPalpiteDigitado();
+    
+        numeroAleatorio = Math.floor(Math.random() * 100) + 1; //Gerando um novo número aleatório
     }
-}
 }
